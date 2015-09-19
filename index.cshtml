@@ -1,0 +1,24 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { Id = "Form1" }))
+{
+    @Html.Label("First Name");
+    @Html.TextBox("firstName");
+    <br>
+    @Html.Label("Last Name");
+    @Html.TextBox("lastName");
+    <br>
+    <input type="submit" value="Add user">
+    <br>
+}
+
+@{ if(IsPost)
+    {
+        if(ViewBag.Rows > 0)
+        {
+            <p>Uzivatel pridany.</p>
+        }
+    }
+}
